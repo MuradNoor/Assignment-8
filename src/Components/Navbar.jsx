@@ -27,7 +27,7 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
-            <NavLink className="font-bold" to="/home">
+            <NavLink className="font-bold" to="/">
               Home
             </NavLink>
             <NavLink className="font-bold" to="/listedbooks">
@@ -38,7 +38,7 @@ const Navbar = () => {
             </NavLink>
           </ul>
         </div>
-        <Link to="/home" className="btn btn-ghost text-gray-800 text-2xl">
+        <Link to="/" className="btn btn-ghost text-gray-800 text-2xl">
           Book Worm
         </Link>
       </div>
@@ -46,7 +46,7 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1 flex justify-center in-checked: gap-8">
           <NavLink
             className="font-bold  border-2 px-4 py-2 border-green-600 rounded-xl"
-            to="/home"
+            to="/"
           >
             Home
           </NavLink>

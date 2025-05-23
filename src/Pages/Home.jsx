@@ -4,7 +4,6 @@ import BookCard from "../Components/BookCard";
 
 const Home = () => {
   const books = useLoaderData();
-  console.log(books);
   return (
     <div>
       <section className="dark:bg-gray-100 dark:text-gray-800 rounded-xl mb-25">
@@ -35,8 +34,9 @@ const Home = () => {
       </section>
       <section className="container mx-auto">
         <h1 className="text-4xl font-bold text-center mb-9">Books</h1>
-        <div className="grid grid-cols-3 gap-6 mb-25">
-          {books.map((book) => (
+        <div className="grid lg:grid-cols-3 sm:grid-cols-1 gap-6 mb-25">
+          {
+          books.map((book) => (
             <BookCard key={book.bookId} book={book}></BookCard>
           ))}
         </div>
