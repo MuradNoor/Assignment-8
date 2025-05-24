@@ -1,5 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
-import { saveBook } from "../Utility/Utility";
+import { saveBook, saveWishlist } from "../Utility/Utility";
 
 const BookDetails = () => {
   const books = useLoaderData();
@@ -22,6 +22,9 @@ const BookDetails = () => {
       saveBook(book)
     }
 
+    const handleWishlist = (book) => {
+      saveWishlist(book)
+    }
   return (
     <section className="mr-3 dark:text-gray-800">
       <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-center lg:gap-6">
@@ -97,6 +100,7 @@ const BookDetails = () => {
               Read 
             </button>
             <button
+            onClick={() => handleWishlist(book)}
               type="button"
               className="px-8 py-3 font-semibold rounded cursor-pointer dark:bg-blue-400 hover:bg-purple-500 dark:text-white"
             >

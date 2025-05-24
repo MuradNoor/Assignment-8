@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getBooks } from "../Utility/Utility";
-import { BarChart, Bar, XAxis, YAxis, Tooltip } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, Cell } from 'recharts';
 import EmptyPagesToRead from "../Components/EmptyPagesToRead";
 
 
@@ -13,8 +13,7 @@ const ReadPages = () => {
         },[])
 
         const data = books;
-
-        console.log(books);
+        const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
           const getPath = (x, y, width, height) => (
     `M${x},${y + height}
      C${x + width / 3},${y + height} ${x + width / 2},${y + height / 3} ${x + width / 2}, ${y}
@@ -32,12 +31,17 @@ const ReadPages = () => {
     else
     return (
         <div className="w-full bg-gray-100 p-10 rounded-xl">
-            <div>
+            <div className="w-full overflow-hidden">
                  <BarChart width={1400} height={700} data={data}>
-                   <XAxis dataKey='bookName' tick={books} />
+                   <XAxis dataKey='bookName'  />
                    <YAxis />
                    <Tooltip></Tooltip>
-                   <Bar dataKey="totalPages" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top', fill: 'blue', fontSize: 14 }} />
+                    <Bar dataKey="totalPages" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top', fontSize: 12}}>
+                    {
+                        data.map((entry, index) => (
+                            <Cell key={`cell-${index}`} fill={colors[index % 20]} />
+                        ))}
+      </Bar>
                  </BarChart>
                </div>
         </div>
