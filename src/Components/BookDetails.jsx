@@ -92,13 +92,13 @@ const BookDetails = () => {
             <button
             onClick={() => handleReadBook(book)}
               type="button"
-              className="px-8 py-3 border-2 border-gray-300 font-semibold rounded dark:bg-white dark:text-black"
+              className="px-8 py-3 border-2 border-gray-300 cursor-pointer hover:bg-green-400 font-semibold rounded dark:bg-white dark:text-black"
             >
               Read 
             </button>
             <button
               type="button"
-              className="px-8 py-3 font-semibold rounded dark:bg-blue-400 dark:text-white"
+              className="px-8 py-3 font-semibold rounded cursor-pointer dark:bg-blue-400 hover:bg-purple-500 dark:text-white"
             >
               Wishlist
             </button>

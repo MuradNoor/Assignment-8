@@ -47,6 +47,7 @@ const ReadBookCard = ({book}) => {
                     <Link to={`/bookdetails/${bookId}`} className="bg-green-300 p-2 rounded-2xl text-green-800">View Details</Link>
                 </div>
             </div>
+            
         </div>
     );
 };
