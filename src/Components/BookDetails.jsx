@@ -1,4 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { saveBook } from "../Utility/Utility";
 
 const BookDetails = () => {
   const books = useLoaderData();
@@ -16,6 +17,11 @@ const BookDetails = () => {
     rating,
     category,
   } = book;
+
+    const handleReadBook = (book) => {
+      saveBook(book)
+    }
+
   return (
     <section className="mr-3 dark:text-gray-800">
       <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-center lg:gap-6">
@@ -84,10 +90,11 @@ const BookDetails = () => {
           </div>
           <div className="mt-8 flex gap-4">
             <button
+            onClick={() => handleReadBook(book)}
               type="button"
               className="px-8 py-3 border-2 border-gray-300 font-semibold rounded dark:bg-white dark:text-black"
             >
-              Read
+              Read 
             </button>
             <button
               type="button"

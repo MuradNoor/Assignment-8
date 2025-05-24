@@ -27,13 +27,13 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
-            <NavLink className="font-bold" to="/">
+            <NavLink className={({isActive}) => isActive ? 'font-bold  border-2 px-4 py-2 border-green-600 rounded-xl text-green-600' : 'py-2 text-gray-700'} to="/">
               Home
             </NavLink>
-            <NavLink className="font-bold" to="/listedbooks">
+            <NavLink className={({isActive}) => isActive ? 'font-bold  border-2 px-4 py-2 border-green-600 rounded-xl text-green-600' : 'py-2 text-gray-700'}to="/listedbooks">
               Listed Books
             </NavLink>
-            <NavLink className="font-bold" to="/readpages">
+            <NavLink className={({isActive}) => isActive ? 'font-bold  border-2 px-4 py-2 border-green-600 rounded-xl text-green-600' : 'py-2 text-gray-700'} to="/readpages">
               Pages To Read
             </NavLink>
           </ul>
@@ -45,19 +45,19 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 flex justify-center in-checked: gap-8">
           <NavLink
-            className="font-bold  border-2 px-4 py-2 border-green-600 rounded-xl"
+            className={({isActive}) => isActive ? 'font-bold  border-2 px-4 py-2 border-green-600 rounded-xl text-green-600' : 'py-2 text-gray-700'}
             to="/"
           >
             Home
           </NavLink>
           <NavLink
-            className="font-bold  border-2 px-4 py-2 border-green-600 rounded-xl"
+            className={({isActive}) => isActive ? 'font-bold  border-2 px-4 py-2 border-green-600 rounded-xl text-green-600' : 'py-2 text-gray-700'}
             to="/listedbooks"
           >
             Listed Books
           </NavLink>
           <NavLink
-            className="font-bold  border-2 px-4 py-2 border-green-600 rounded-xl"
+            className={({isActive}) => isActive ? 'font-bold  border-2 px-4 py-2 border-green-600 rounded-xl text-green-600' : 'py-2 text-gray-700'}
             to="/readpages"
           >
             Pages To Read
